@@ -10,6 +10,6 @@ rvm:
 - 2.5.7
 env:
   global:
-  - OHANA_API_ENDPOINT=https://api.smc-connect.org
+  - OHANA_API_ENDPOINT=http://api.smc-connect.org
   - TWILIO_AUTH_TOKEN=token
   - secure: WWteLvcsks/fRycU0UDomkhThCX41vN2yqPR0FdQ4qHjXcDkEiPHngzB1YKoWSoiq4+oibAddSt9V4/7DvGwtks3lOohQn2iqcybObLs7ER9HrensOs2wzjTDFwduhYxQM38BWou35V6/Aod8OtK2HNHUrnDqqJaAb9NuVERwIM=

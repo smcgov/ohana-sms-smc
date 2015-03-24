@@ -42,6 +42,7 @@ bin/setup
 [node]: https://github.com/codeforamerica/howto/blob/master/Node.js.md
 
 #### Twilio
+
 If you're a maintainer of the San Mateo County version of Ohana SMS, you will
 need access to San Mateo County's Twilio account. Otherwise, if you're
 interested in deploying your own version of Ohana SMS, please refer to the
