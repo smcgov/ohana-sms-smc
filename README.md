@@ -2,14 +2,17 @@
 
 [![Build Status](https://travis-ci.org/smcgov/ohana-sms.png?branch=master)](https://travis-ci.org/smcgov/ohana-sms) [![Code Climate](https://codeclimate.com/github/smcgov/ohana-sms/badges/gpa.svg)](https://codeclimate.com/github/smcgov/ohana-sms) [![Dependency Status](https://gemnasium.com/smcgov/ohana-sms.svg)](https://gemnasium.com/smcgov/ohana-sms) [![Test Coverage](https://codeclimate.com/github/smcgov/ohana-sms/badges/coverage.svg)](https://codeclimate.com/github/smcgov/ohana-sms)
 
-SMC-Connect SMS is San Mateo County's customized version of Ohana SMS,
-a Ruby on Rails application that allows people in need who lack access to
-the internet to find human services via SMS.
+SMC-Connect SMS is San Mateo County's customized version of
+[Ohana SMS][ohana-sms], a Ruby on Rails application that allows people in need
+who lack access to the internet to find human services via SMS.
 
-By default, Ohana SMS is able to query any [Ohana API][ohana-api] instance,
-but it can be modified to work with any API.
+[ohana-sms]: https://github.com/monfresh/ohana-sms
 
-[ohana-api]: https://github.com/codeforamerica/ohana-api
+You can try the service by sending a 5-digit ZIP code to these numbers:
+
+**English:** 650-227-9909
+
+**Spanish:** 650-802-8934
 
 ## Stack Overview
 
@@ -23,14 +26,14 @@ but it can be modified to work with any API.
 You'll need a Ruby development environment on your computer, and a Twilio account.
 
 #### Ruby
-If you're on a Mac, the easiest way to get up and running is to run my
+If you're on a Mac, the easiest way to get up and running is to run @monfresh's
 [laptop script](https://github.com/monfresh/laptop). On Linux, you'll need to
 install [Build tools][build-tools], [Ruby with RVM][ruby], and [Node.js][node].
 
 Once your environment is ready to go, install the app:
 
 ```
-git clone git@github.com:monfresh/ohana-sms.git && cd ohana-sms
+git clone git@github.com:smcgov/ohana-sms-smc.git && cd ohana-sms-smc
 bin/setup
 ```
 
@@ -39,108 +42,58 @@ bin/setup
 [node]: https://github.com/codeforamerica/howto/blob/master/Node.js.md
 
 #### Twilio
-1. Sign up for a [free Twilio account](http://twilio.com/try-twilio).
-2. Once logged in to your Twilio account, visit the [Account Settings][settings]
+If you're a maintainer of the San Mateo County version of Ohana SMS, you will
+need access to San Mateo County's Twilio account. Otherwise, if you're
+interested in deploying your own version of Ohana SMS, please refer to the
+[Ohana SMS instructions](https://github.com/monfresh/ohana-sms#twilio).
+
+1. Once logged in to your Twilio account, visit the [Account Settings][settings]
 page.
-3. Copy your AuthToken and paste it in `config/application.yml`
+2. Copy your AuthToken and paste it in `config/application.yml`
 next to `twilio_auth_token`.
 
 [settings]: https://www.twilio.com/user/account/settings
 
 ## Deploy to Heroku
 
-1. Click this button: [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-
-2. Sign in, or sign up if you don't already have a Heroku account
-
-3. Fill in the `App Name` field with your desired name, such as `ohana-sms-demo`
-
-4. Scroll down and click `Deploy for Free`
-
-5. Once your app is created, go to your computer's command line
-and run `figaro heroku:set -e production -a your_app_name`,
-where `your_app_name` is the name you chose in step 3.
-This will configure your Heroku app with your secret Twilio information
-from your `application.yml`.
-
-6. Go to the Twilio [Manage Numbers][manage] page and click on your number.
-
-7. Under `Messaging`, in `Request URL`, enter
-`https://ohana-sms-demo.herokuapp.com/locations/reply`, making sure to
-replace `ohana-sms-demo` with your actual Heroku app name. Then select
-`HTTP GET` from the dropdown, and click `Save`. It should look like this:
-
-![Twilio Messaging Request URL](http://cl.ly/image/061w3F2H0W0X/download/Image%202015-03-03%20at%2011.51.27%20PM.png)
-
-[manage]: https://www.twilio.com/user/account/phone-numbers/incoming
-
-## Test the app with your phone
-
-1. Send an SMS to your Twilio number. You should be asked to enter a ZIP code:
-   ```
-   Hi! Please enter a 5-digit ZIP code to get started.
-   ```
-
-2. Send `94025`. You should be offered to choose a category:
-   ```
-   Please choose a category by entering its number: #1: Care,
-   #2: Education...
-   ```
-
-3. Send `1`. You should get up to 5 results if there's a match:
-   ```
-   Here are up to 5 locations that match your search.
-   To get more details about a location, enter its number.
-   #1: Rosener House Adult Day Services (Peninsula Volunteers)...
-   ```
-   If there isn't a match, you should get:
-   ```
-   Sorry, no results found. Please try again with a different ZIP code or category.
-   ```
-
-4. Send `1`. You should get more details about Rosener House
-(short description, phone, and address).
-
-5. You can now send a different result number to see details about another location.
-
-6. To reset the conversation, send `reset` (it's not case-sensitive).
-
-## Configure the app to return your own data
-If you haven't already deployed an instance of [Ohana API][ohana-api] with
-your own data, you'll need to do that first.
-
-Then, all you'll need to do is set the `OHANA_API_ENDPOINT` config var on
-Heroku to your API's URL:
-
-```
-heroku config:set OHANA_API_ENDPOINT=https://your_ohana_api_url -a your_heroku_app_name
-```
-
-[ohana-api]: https://github.com/codeforamerica/ohana-api
+SMC-Connect SMS is already deployed to Heroku. If you're a maintainer of
+SMC-Connect SMS, please request access to San Mateo County's Heroku account.
 
 ## Customizing and translating the SMS messages
 
 Currently, what can be translated are the greetings and instructions.
 The search results content, such as the Location names, or the short
-descriptions, are not translated. In order to translate search results,
-you would need to sign up for Google's paid translation service, but I
-have not integrated it in this app yet.
+descriptions, are not translated.
 
-To translate the greetings and instructions, copy and paste the contents of
+To modify the existing translations, you can edit them directly on GitHub if
+you have write access to this repo. Here are the edit links for the [English]
+and [Spanish] text.
+
+[English]: https://github.com/smcgov/ohana-sms-smc/edit/master/config/locales/en.yml
+[Spanish]: https://github.com/smcgov/ohana-sms-smc/edit/master/config/locales/es.yml
+
+To translate the messages into a new language, copy and paste the contents of
 `config/locales/en.yml` into a new file in `config/locales` with a filename
 corresponding to the language's two-character code, and with a `.yml`
 extension. Then translate the text from English into your desired language.
 See `config/locales/es.yml` as an example. For more details, read the
 [Rails Internationalization Guide](http://guides.rubyonrails.org/i18n.html).
 
-Once your translations are in place, create a new number in your Twilio account
-that will be used for a particular language. Following the same instructions
-as in Step 7 in the [Deploy to Heroku section](#deploy-to-heroku), add `?locale=[language_code]` to
-the end of the Request URL. For example, to make your phone number use the
-Spanish version of the app, your Request URL would look like this:
-```
-https://ohana-sms-demo.herokuapp.com/locations/reply?locale=es
-```
+Once your translations are in place, [buy a new number][number] in your
+Twilio account that will be used for a particular language. Then follow these
+instructions:
+
+1. Go to the Twilio [Manage Numbers][manage] page and click on your number.
+
+2. Under `Messaging`, in `Request URL`, enter
+`https://ohana-sms-smc.herokuapp.com/locations/reply?locale=[language_code]`,
+where `[language_code]` is the 2-letter code for your desired language.
+For example, French would be `?locale=fr`.
+
+3. Select `HTTP GET` from the dropdown, and click `Save`.
+
+[number]: https://www.twilio.com/user/account/phone-numbers/search
+[manage]: https://www.twilio.com/user/account/phone-numbers/incoming
 
 ## Running the tests
 

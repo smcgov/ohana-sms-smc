@@ -10,4 +10,4 @@ rvm:
 env:
   global:
   - OHANA_API_ENDPOINT=http://api.smc-connect.org
-  - secure: GJKOxmCXup9U8NRW97tWVXEjkYqeFBcSuSVdkOe8O9j4Zm6l0r+Dh7DNBIOt5cWAYCiZpbfYTh8Vu5iBniuz4YrQ+UAWXJz1XAbyvRVmDowoMa+utmnyzfXtIfFi7rOHZjyKOa2em65ZbwNMPrdhLV9OBCn61ozUDySFvKvgoZQ=
+  - secure: WWteLvcsks/fRycU0UDomkhThCX41vN2yqPR0FdQ4qHjXcDkEiPHngzB1YKoWSoiq4+oibAddSt9V4/7DvGwtks3lOohQn2iqcybObLs7ER9HrensOs2wzjTDFwduhYxQM38BWou35V6/Aod8OtK2HNHUrnDqqJaAb9NuVERwIM=
