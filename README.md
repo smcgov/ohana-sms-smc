@@ -1,6 +1,6 @@
 # SMC-Connect SMS
 
-[![Build Status](https://travis-ci.org/smcgov/ohana-sms.png?branch=master)](https://travis-ci.org/smcgov/ohana-sms) [![Code Climate](https://codeclimate.com/github/smcgov/ohana-sms/badges/gpa.svg)](https://codeclimate.com/github/smcgov/ohana-sms) [![Dependency Status](https://gemnasium.com/smcgov/ohana-sms.svg)](https://gemnasium.com/smcgov/ohana-sms) [![Test Coverage](https://codeclimate.com/github/smcgov/ohana-sms/badges/coverage.svg)](https://codeclimate.com/github/smcgov/ohana-sms)
+[![Build Status](https://travis-ci.org/smcgov/ohana-sms-smc.png?branch=master)](https://travis-ci.org/smcgov/ohana-sms-smc) [![Code Climate](https://codeclimate.com/github/smcgov/ohana-sms-smc/badges/gpa.svg)](https://codeclimate.com/github/smcgov/ohana-sms-smc) [![Dependency Status](https://gemnasium.com/smcgov/ohana-sms-smc.svg)](https://gemnasium.com/smcgov/ohana-sms-smc) [![Test Coverage](https://codeclimate.com/github/smcgov/ohana-sms-smc/badges/coverage.svg)](https://codeclimate.com/github/smcgov/ohana-sms-smc)
 
 SMC-Connect SMS is San Mateo County's customized version of
 [Ohana SMS][ohana-sms], a Ruby on Rails application that allows people in need
