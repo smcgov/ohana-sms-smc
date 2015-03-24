@@ -1,9 +1,10 @@
-# Ohana SMS
+# SMC-Connect SMS
 
-[![Build Status](https://travis-ci.org/monfresh/ohana-sms.png?branch=master)](https://travis-ci.org/monfresh/ohana-sms) [![Code Climate](https://codeclimate.com/github/monfresh/ohana-sms/badges/gpa.svg)](https://codeclimate.com/github/monfresh/ohana-sms) [![Dependency Status](https://gemnasium.com/monfresh/ohana-sms.svg)](https://gemnasium.com/monfresh/ohana-sms) [![Test Coverage](https://codeclimate.com/github/monfresh/ohana-sms/badges/coverage.svg)](https://codeclimate.com/github/monfresh/ohana-sms)
+[![Build Status](https://travis-ci.org/smcgov/ohana-sms.png?branch=master)](https://travis-ci.org/smcgov/ohana-sms) [![Code Climate](https://codeclimate.com/github/smcgov/ohana-sms/badges/gpa.svg)](https://codeclimate.com/github/smcgov/ohana-sms) [![Dependency Status](https://gemnasium.com/smcgov/ohana-sms.svg)](https://gemnasium.com/smcgov/ohana-sms) [![Test Coverage](https://codeclimate.com/github/smcgov/ohana-sms/badges/coverage.svg)](https://codeclimate.com/github/smcgov/ohana-sms)
 
-Ohana SMS is a Ruby on Rails application that allows people in need who lack
-access to the internet to find human services via SMS.
+SMC-Connect SMS is San Mateo County's customized version of Ohana SMS,
+a Ruby on Rails application that allows people in need who lack access to
+the internet to find human services via SMS.
 
 By default, Ohana SMS is able to query any [Ohana API][ohana-api] instance,
 but it can be modified to work with any API.

@@ -1,4 +1,8 @@
 # Add configuration values here, as shown below.
 #
 twilio_auth_token: 'your_32_character_token'
-OHANA_API_ENDPOINT: 'https://ohana-api-demo.herokuapp.com/api'
+OHANA_API_ENDPOINT: 'http://api.smc-connect.org'
+
+# Please do not modify the test settings.
+test:
+  OHANA_API_ENDPOINT: 'http://api.smc-connect.org'
