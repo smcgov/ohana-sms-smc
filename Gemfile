@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.2.3'
+ruby '2.3.1'
 
 gem 'rails', '~> 4.2.0'
 gem 'figaro'
@@ -19,6 +19,7 @@ end
 group :development, :test do
   gem 'spring'
   gem 'spring-watcher-listen'
+  gem 'bummr'
 end
 
 group :test do
