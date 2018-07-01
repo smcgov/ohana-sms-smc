@@ -52,7 +52,7 @@ page.
 2. Copy your AuthToken and paste it in `config/application.yml`
 next to `twilio_auth_token`.
 
-[settings]: https://www.twilio.com/user/account/settings
+[settings]: https://www.twilio.com/console/project/settings
 
 ## Deploy to Heroku
 
