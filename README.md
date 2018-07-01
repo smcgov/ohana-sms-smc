@@ -16,8 +16,8 @@ You can try the service by sending a 5-digit ZIP code to these numbers:
 
 ## Stack Overview
 
-* Ruby version 2.3.3
-* Rails version 4.2.7.1
+* Ruby version 2.5.1
+* Rails version 5.2.0
 * Testing Frameworks: MiniTest
 
 ## Local Installation
