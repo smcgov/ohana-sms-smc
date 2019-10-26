@@ -104,7 +104,7 @@ Run tests locally with this command:
 
 To see the actual tests, browse through the [test] directory.
 
-[test]: https://github.com/monfresh/ohana-sms/tree/master/test
+[test]: https://github.com/smcgov/ohana-sms-smc/tree/master/test
 
 Credits
 -------
