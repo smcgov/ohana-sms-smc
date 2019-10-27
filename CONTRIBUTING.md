@@ -10,7 +10,7 @@ Before contributing, I encourage you to read the CONTRIBUTING policy
 (you are here), the LICENSE, and the README, all of which should be in this
 repository.
 
-[issue]: https://github.com/monfresh/ohana-sms/issues
+[issue]: https://github.com/smcgov/ohana-sms-smc/issues
 
 ## Contributing to Ohana SMS
 

@@ -16,8 +16,8 @@ You can try the service by sending a 5-digit ZIP code to these numbers:
 
 ## Stack Overview
 
-* Ruby version 2.3.3
-* Rails version 4.2.7.1
+* Ruby version 2.5.7
+* Rails version 5.2.0
 * Testing Frameworks: MiniTest
 
 ## Local Installation
@@ -42,6 +42,7 @@ bin/setup
 [node]: https://github.com/codeforamerica/howto/blob/master/Node.js.md
 
 #### Twilio
+
 If you're a maintainer of the San Mateo County version of Ohana SMS, you will
 need access to San Mateo County's Twilio account. Otherwise, if you're
 interested in deploying your own version of Ohana SMS, please refer to the
@@ -52,7 +53,7 @@ page.
 2. Copy your AuthToken and paste it in `config/application.yml`
 next to `twilio_auth_token`.
 
-[settings]: https://www.twilio.com/user/account/settings
+[settings]: https://www.twilio.com/console/project/settings
 
 ## Deploy to Heroku
 
@@ -103,7 +104,7 @@ Run tests locally with this command:
 
 To see the actual tests, browse through the [test] directory.
 
-[test]: https://github.com/monfresh/ohana-sms/tree/master/test
+[test]: https://github.com/smcgov/ohana-sms-smc/tree/master/test
 
 Credits
 -------

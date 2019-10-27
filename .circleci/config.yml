@@ -1,0 +1,45 @@
+# Ruby CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-ruby/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+      # Specify the Ruby version you desire here
+      - image: circleci/ruby:2.5.7
+        environment:
+          RAILS_ENV: test
+          OHANA_API_ENDPOINT: https://api.smc-connect.org
+          TWILIO_AUTH_TOKEN: token
+
+    working_directory: ~/ohana-sms-smc
+
+    steps:
+      - checkout
+
+      - restore-cache:
+          keys:
+            - v1-ohana-sms-smc-{{ checksum "Gemfile.lock" }}
+      - run:
+          name: Install dependencies
+          command: |
+            gem install bundler
+            bundle install --deployment --jobs=4 --retry=3 --without development production --path vendor/bundle
+      - save-cache:
+          key: v1-ohana-sms-smc-bundle-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+
+      - run:
+          name: Run Tests
+          command: |
+            mkdir /tmp/test-results
+            bundle exec rake
+
+      # collect reports
+      - store_test_results:
+          path: /tmp/test-results
+      - store_artifacts:
+          path: /tmp/test-results
+          destination: test-results

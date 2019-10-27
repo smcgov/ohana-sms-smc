@@ -1,15 +1,12 @@
 # frozen_string_literal: true
-if ENV['TRAVIS']
-  require 'simplecov'
-  SimpleCov.start
-end
+
+require 'simplecov'
+SimpleCov.start
 
 ENV['RAILS_ENV'] ||= 'test'
-require File.expand_path('../../config/environment', __FILE__)
+require File.expand_path('../config/environment', __dir__)
 require 'rails/test_help'
 require 'mocha/mini_test'
-include AbstractController::Translation
-
 require 'webmock/minitest'
 WebMock.disable_net_connect!(allow_localhost: true)
 
@@ -22,6 +19,8 @@ end
 
 module ActiveSupport
   class TestCase
+    include AbstractController::Translation
+
     def sms_body
       @sms_body = Nokogiri::XML(response.body).at_xpath('//Message').content
     end
